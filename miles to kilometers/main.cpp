@@ -54,6 +54,10 @@ int main(int argc, const char * argv[]) {
                 double val2;
                 cout << "Enter two numbers:";
                 cin >> val1 >> val2;
+                obj.input.push_back(val1);
+                obj.input.push_back(val2);
+                obj.minimum();
+                obj.maximum();
                 double min;
                 double max;
                 if (val1 > val2) {

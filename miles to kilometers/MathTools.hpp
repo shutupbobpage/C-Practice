@@ -16,6 +16,8 @@ class MathTools {
 public:
     MathTools();
     std::vector <double> input;
+    void maximum();
+    void minimum();
 };
 
 #endif /* MathTools_hpp */
