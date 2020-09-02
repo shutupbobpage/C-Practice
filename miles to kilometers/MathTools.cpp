@@ -9,11 +9,14 @@
 #include "MathTools.hpp"
 #include <iostream>
 #include <vector>
+#include <cmath>
 using namespace std;
 
 MathTools::MathTools() {
     vector <double> input;
+    vector <int> disc;
 };
+
 
 void MathTools::maximum() {
     double max = input[0];
@@ -22,7 +25,7 @@ void MathTools::maximum() {
             max = input[i];
         }
     }
-    cout << "Test MathTools - Max is " << max << ".\n";
+    cout << "Max: " << max << "\n";
 }
 
 void MathTools::minimum() {
@@ -32,6 +35,56 @@ void MathTools::minimum() {
             min = input[i];
         }
     }
-    cout << "Test MathTools - Min is " << min << ".\n";
+    cout << "Min: " << min << "\n";
+}
+
+void MathTools::sum() {
+    double total = 0;
+    for (int i = 0; i < input.size(); ++i) {
+        total = total + input[i];
+    }
+    cout << "Sum: " << total << "\n";
+}
+
+// should only be used for first two values of input
+void MathTools::difference() {
+    double diff = input[0] - input[1];
+    cout << "Difference: " << diff << "\n";
+}
+
+//should only be used for first two values of input
+void MathTools::product() {
+    double prod = input[0] * input[1];
+    cout << "Product: " << prod << "\n";
+}
+
+//should only be used for first two values of input
+void MathTools::ratio() {
+    double rat = input[0] / input[1];
+    cout << "Ratio: " << rat << "\n";
+}
+
+bool MathTools::parity(int x) {
+    return (x % 2 == 0 ? true : false);
+}
+
+
+void MathTools::quadratic() {
+    double a = input[0];
+    double b = input[1];
+    double c = input[2];    
+    double x1 = (-b+sqrt((b*b)-4*a*c))/(2*a);
+    double x2 = (-b-sqrt((b*b)-4*a*c))/(2*a);
+    
+    if (isnan(x1) || isnan(x2)) {
+        cout << "x is an imaginary number\n";
+    }
+    else if (x1 != x2) {
+        cout << "x = (" << x1 << ", " << x2 << ")\n";
+    }
+    else {
+        cout << "x = " << x1 << "\n";
+    }
+
 }
 

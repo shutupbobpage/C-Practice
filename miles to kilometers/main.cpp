@@ -34,6 +34,7 @@ int main(int argc, const char * argv[]) {
         int option;
         cin >> option;
         switch(option) {
+            // Miles to kilometers
             case 1: {
                 UnitConversion obj;
                 cout << "How many miles?\n";
@@ -41,6 +42,7 @@ int main(int argc, const char * argv[]) {
                 cout << obj.input << " miles is equal to " << obj.miles_to_km(obj.input) << " kilometers\n\n";
                 break;
             }
+            // Kilometers to miles
             case 2: {
                 UnitConversion obj;
                 cout << "How many kilometers?\n";
@@ -48,6 +50,7 @@ int main(int argc, const char * argv[]) {
                 cout << obj.input << " kilometers is equal to " << obj.km_to_miles(obj.input) << " miles.\n\n";
                 break;
             }
+            // Min, Max, Sum, Difference, Product, Ratio
             case 3: {
                 MathTools obj;
                 double val1;
@@ -58,24 +61,13 @@ int main(int argc, const char * argv[]) {
                 obj.input.push_back(val2);
                 obj.minimum();
                 obj.maximum();
-                double min;
-                double max;
-                if (val1 > val2) {
-                    max = val1;
-                    min = val2;
-                }
-                else {
-                    max = val2;
-                    min = val1;
-                }
-                cout << "Min: " << min << "\n"
-                        "Max: " << max << "\n"
-                        "Sum: " << val1+val2 << "\n"
-                        "Difference: " << val1-val2 << "\n"
-                        "Product: " << val1*val2 << "\n"
-                        "Ratio: " << val1/val2 << "\n\n";
+                obj.sum();
+                obj.difference();
+                obj.product();
+                obj.ratio();
                 break;
             }
+            // Numerical sequence
             case 4: {
                 double val1;
                 double val2;
@@ -123,18 +115,21 @@ int main(int argc, const char * argv[]) {
                         "Max: " << max << "\n\n";
                 break;
             }
+            // Even or odd
             case 5: {
-                int val1;
+                MathTools obj;
+                int val;
                 cout << "Enter an integer:\n";
-                cin >> val1;
-                if (val1 % 2 == 0) {
-                    cout << "The number is even.\n\n";
+                cin >> val;
+                if (obj.parity(val) == true) {
+                    cout << "This number is even.\n";
                 }
                 else {
-                    cout << "The number is odd.\n\n";
+                    cout << "This number is odd.\n";
                 }
                 break;
             }
+            // Vector demo
             case 6: {
                 vector<double> city_dist;
                 double total_dist = 0.0;
@@ -163,6 +158,7 @@ int main(int argc, const char * argv[]) {
                         "Average Distance: " << total_dist/x << " mile(s).\n\n";
                 break;
             }
+            // Number guessing
             case 7: {
                 int value = rand() % 100 + 1;
                 int min = 0;
@@ -233,12 +229,13 @@ int main(int argc, const char * argv[]) {
                 }
                 break;
             }
+                
+            // Quadratic formula
             case 9: {
+                MathTools obj;
                 double a;
                 double b;
                 double c;
-                double x1;
-                double x2;
                 cout << "Quadratic equations take the form [ax^2 + bx + c = 0]\n"
                         "Enter a:\n";
                 cin >> a;
@@ -247,19 +244,12 @@ int main(int argc, const char * argv[]) {
                 cout << "Enter c:\n";
                 cin >> c;
                 
-                x1 = (-b+sqrt((b*b)-4*a*c))/(2*a);
-                x2 = (-b-sqrt((b*b)-4*a*c))/(2*a);
+                obj.input.push_back(a);
+                obj.input.push_back(b);
+                obj.input.push_back(c);
                 
-                
-                if (isnan(x1) || isnan(x2)) {
-                    cout << "x is an imaginary number\n";
-                }
-                else if (x1 != x2) {
-                    cout << "x = (" << x1 << ", " << x2 << ")\n";
-                }
-                else {
-                    cout << "x = " << x1 << "\n";
-                }
+                obj.quadratic();
+      
                 break;
             }
             case 10: {

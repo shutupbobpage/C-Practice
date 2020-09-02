@@ -16,8 +16,15 @@ class MathTools {
 public:
     MathTools();
     std::vector <double> input;
+    std::vector <int> disc;
     void maximum();
     void minimum();
+    void sum();
+    void difference();
+    void product();
+    void ratio();
+    bool parity(int x);
+    void quadratic();
 };
 
 #endif /* MathTools_hpp */
