@@ -10,6 +10,7 @@
 		F70B682F24F98D79009A49AA /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F70B682E24F98D79009A49AA /* main.cpp */; };
 		F70B683A24FDDE80009A49AA /* UnitConversion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F70B683824FDDE80009A49AA /* UnitConversion.cpp */; };
 		F70B683D24FDE2BB009A49AA /* MathTools.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F70B683B24FDE2BB009A49AA /* MathTools.cpp */; };
+		F7135427250046D8007C10F7 /* SimpleGames.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F7135425250046D8007C10F7 /* SimpleGames.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +32,8 @@
 		F70B683924FDDE80009A49AA /* UnitConversion.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = UnitConversion.hpp; sourceTree = "<group>"; };
 		F70B683B24FDE2BB009A49AA /* MathTools.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MathTools.cpp; sourceTree = "<group>"; };
 		F70B683C24FDE2BB009A49AA /* MathTools.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MathTools.hpp; sourceTree = "<group>"; };
+		F7135425250046D8007C10F7 /* SimpleGames.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SimpleGames.cpp; sourceTree = "<group>"; };
+		F7135426250046D8007C10F7 /* SimpleGames.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = SimpleGames.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,10 +67,12 @@
 			isa = PBXGroup;
 			children = (
 				F70B682E24F98D79009A49AA /* main.cpp */,
+				F7135425250046D8007C10F7 /* SimpleGames.cpp */,
+				F7135426250046D8007C10F7 /* SimpleGames.hpp */,
 				F70B683824FDDE80009A49AA /* UnitConversion.cpp */,
+				F70B683924FDDE80009A49AA /* UnitConversion.hpp */,
 				F70B683B24FDE2BB009A49AA /* MathTools.cpp */,
 				F70B683C24FDE2BB009A49AA /* MathTools.hpp */,
-				F70B683924FDDE80009A49AA /* UnitConversion.hpp */,
 			);
 			path = "miles to kilometers";
 			sourceTree = "<group>";
@@ -132,6 +137,7 @@
 				F70B682F24F98D79009A49AA /* main.cpp in Sources */,
 				F70B683A24FDDE80009A49AA /* UnitConversion.cpp in Sources */,
 				F70B683D24FDE2BB009A49AA /* MathTools.cpp in Sources */,
+				F7135427250046D8007C10F7 /* SimpleGames.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

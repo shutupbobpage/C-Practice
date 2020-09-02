@@ -12,12 +12,21 @@
 #include <algorithm>
 #include <cmath>
 #include <limits>
+#include <tuple>
 #include "UnitConversion.hpp"
 #include "MathTools.hpp"
+#include "SimpleGames.hpp"
 
 using namespace std;
 
 int main(int argc, const char * argv[]) {
+    
+    // To keep track of high scores
+    // Numbers Guessing Game = high_scores[0]
+    vector <tuple <string, int>> high_scores;
+    high_scores.push_back(make_tuple("wat", 50));
+    
+    
     while(1==1) {
         cout << "Hello! Select an option.\n\n"
                 "1) Miles to kilometers\n"
@@ -158,8 +167,9 @@ int main(int argc, const char * argv[]) {
                         "Average Distance: " << total_dist/x << " mile(s).\n\n";
                 break;
             }
-            // Number guessing
+            // Number guessing - high_scores[0]
             case 7: {
+                SimpleGames obj;
                 int value = rand() % 100 + 1;
                 int min = 0;
                 int max = 100;
@@ -201,8 +211,22 @@ int main(int argc, const char * argv[]) {
                     }
                 }
                 cout << "The number you were thinking of is " << value << "!\n\n";
+                
+                //high_scores.push_back(make_tuple("wat", 50));
+                
+                int hs_test_max = 100;
+                cout << "High Score test\n\n";
+                tuple <string, int, bool> temp = obj.enter_score(get<1>(high_scores[0]), hs_test_max);
+                if (get<1>(temp) > get<1>(high_scores[0])) {
+                    get<0>(high_scores[0]) = get<0>(temp);
+                    get<1>(high_scores[0]) = get<1>(temp);
+                }
+                cout << get<0>(high_scores[0]) << ": " << get<1>(high_scores[0]) << endl;
+                
+                
                 break;
             }
+            // Sieve of Eratosthenes - Prime Numbers
             case 8: {
                 int n;
                 vector<int> sieve;
